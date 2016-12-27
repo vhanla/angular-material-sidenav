@@ -159,7 +159,7 @@
                                 if (child.id === id) {
 		                            child.hidden = !value;
 		                            return false;
-		                        };
+		                        }
 
                                 if (child.pages) {
                                     child.pages.every(function (page) {
@@ -228,7 +228,7 @@
                             $scope.toggle($scope.section);
                             $state.go(_e.state);
                         }
-                    };
+                    }
                 }
             });
         }
@@ -414,6 +414,7 @@
             '<md-button\n' +
             '   ss-style-color="{\'background-color\': (isSelected(section.state) || $state.includes(section.state)) ? \'primary.800\': \'primary.default\'}"' +
             '   class="md-raised md-primary"' +
+            '   ng-class="isSelected(section.state) ? \'ssSelected\' : \'\'"' +
             '   ui-sref="{{section.state}}"\n' +
             '   ng-click="focusSection(section)">\n' +
             '   <span ng-if="section.icon" class="{{section.icon}}">&nbsp;&nbsp;</span>{{section.name}}\n' +
@@ -434,7 +435,7 @@
             '       <span flex></span>\n' +
             '       <span aria-hidden="true" class="md-toggle-icon"\n' +
             '           ng-class="{\'toggled\' : isOpen(section)}">\n' +
-            '           <md-icon md-svg-src="md-toggle-arrow"></md-icon>\n' +
+            '           <md-icon>keyboard_arrow_down</md-icon>\n' +
             '       </span>\n' +
             '   </div>\n' +
             '   <span class="md-visually-hidden">\n' +
